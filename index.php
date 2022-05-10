@@ -19,7 +19,7 @@ class Movie {
 
     // definisco un costruttore, una funzione da invocare quando si crea una istanza di classe. 
     // se ci passo dentro delle variabili, nel momento della creazione di istanza devo associarci un valore.
-    public function __construct($_title, $_year, $_lang) {
+    public function __construct($_title, $_year, $_lang){
         $this -> title = $_title;
         $this -> year = $_year;
         $this -> lang = $_lang;
@@ -27,9 +27,9 @@ class Movie {
 
     // creo un metodo che sarà valido solo per gli elementi che fanno parte della classe 
     public function setColor($lang){
-        if ($lang == 'Ita'){
+        if ($lang == 'Ita') {
             $this -> color = 'red';
-        }else {
+        } else {
             $this -> color = 'black';
         }
     }
@@ -45,10 +45,50 @@ $animali = new Movie ("Fantastic Beasts and Where To Find Them 3", 2022, "Eng");
 $sonic = new Movie ("Sonic 2 – Il Film", 2022, "Eng");
 $angeli = new Movie ("Il sesso degli angeli", 2022, "Ita");
 
-
-//stampo gli attributi dei film 
-foreach ($strange as $key => $value) {
-    echo "<div>" . $key -> $value . "</div>";
-}
-
+// foreach ($strange as $key => $value){
+//     echo  "<p>" . $strange -> $key . "</p>";
+// }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Constructor</title>
+</head>
+<body>
+    <div class="card" :class=() style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"> <?php echo $strange->title ?></h5>
+            <h6 class="card-subtitle mb-2 text-muted"> <?php echo $strange -> year ?></h6>
+            <p class="card-text"> <?php echo $strange -> lang ?></p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"> <?php echo $animali->title ?></h5>
+            <h6 class="card-subtitle mb-2 text-muted"> <?php echo $animali -> year ?></h6>
+            <p class="card-text"> <?php echo $animali -> lang ?></p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"> <?php echo $sonic->title ?></h5>
+            <h6 class="card-subtitle mb-2 text-muted"> <?php echo $sonic -> year ?></h6>
+            <p class="card-text"> <?php echo $sonic -> lang ?></p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"> <?php echo $angeli->title ?></h5>
+            <h6 class="card-subtitle mb-2 text-muted"> <?php echo $angeli -> year ?></h6>
+            <p class="card-text"> <?php echo $angeli -> lang ?></p>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
