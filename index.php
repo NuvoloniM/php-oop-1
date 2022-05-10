@@ -28,14 +28,14 @@ class Movie {
     // creo un metodo che sarà valido solo per gli elementi che fanno parte della classe 
     public function setColor($lang){
         if ($lang == 'Ita') {
-            $this -> color = 'red';
+            $this -> color = 'lime';
         } else {
-            $this -> color = 'black';
+            $this -> color = 'lightblue';
         }
     }
 
     public function getColor(){
-        $this -> color;
+        return $this -> color;
     }
 }
 
@@ -45,6 +45,11 @@ $animali = new Movie ("Fantastic Beasts and Where To Find Them 3", 2022, "Eng");
 $sonic = new Movie ("Sonic 2 – Il Film", 2022, "Eng");
 $angeli = new Movie ("Il sesso degli angeli", 2022, "Ita");
 
+//uso la funzione per settare il colore delle istanze di Movie appena create
+$strange-> setcolor($strange->lang);
+$animali-> setcolor($animali->lang);
+$sonic-> setcolor($sonic->lang);
+$angeli-> setcolor($angeli->lang);
 // foreach ($strange as $key => $value){
 //     echo  "<p>" . $strange -> $key . "</p>";
 // }
@@ -60,28 +65,28 @@ $angeli = new Movie ("Il sesso degli angeli", 2022, "Ita");
     <title>Constructor</title>
 </head>
 <body>
-    <div class="card" :class=() style="width: 18rem;">
+    <div class="card" style="width: 18rem; background-color: <?php echo $strange->getColor() ?>">
         <div class="card-body">
             <h5 class="card-title"> <?php echo $strange->title ?></h5>
             <h6 class="card-subtitle mb-2 text-muted"> <?php echo $strange -> year ?></h6>
             <p class="card-text"> <?php echo $strange -> lang ?></p>
         </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem; background-color: <?php echo $animali->getColor() ?>">
         <div class="card-body">
             <h5 class="card-title"> <?php echo $animali->title ?></h5>
             <h6 class="card-subtitle mb-2 text-muted"> <?php echo $animali -> year ?></h6>
             <p class="card-text"> <?php echo $animali -> lang ?></p>
         </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem; background-color: <?php echo $sonic->getColor() ?>">
         <div class="card-body">
             <h5 class="card-title"> <?php echo $sonic->title ?></h5>
             <h6 class="card-subtitle mb-2 text-muted"> <?php echo $sonic -> year ?></h6>
             <p class="card-text"> <?php echo $sonic -> lang ?></p>
         </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem; background-color: <?php echo $angeli->getColor() ?>">
         <div class="card-body">
             <h5 class="card-title"> <?php echo $angeli->title ?></h5>
             <h6 class="card-subtitle mb-2 text-muted"> <?php echo $angeli -> year ?></h6>
